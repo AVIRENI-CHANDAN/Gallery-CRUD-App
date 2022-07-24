@@ -66,6 +66,12 @@
     .pagination a:hover {
         background-color: rgb(160, 234, 247);
     }
+
+    .new-btn{
+        position: fixed;
+        bottom: 1em;
+        right: 1em;
+    }
 </style>
 {% endblock head %}
 
@@ -100,5 +106,8 @@
         <a href="{{url_for(request.endpoint)}}?page={{objects.page+1}}">&raquo;</a>
     </div>
 </div>
+<a href="{{request.url}}/new" class="btn info new-btn">
+    New
+</a>
 
 {% endblock body %}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery CRUD App</title>
+    <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
+    <link rel="shortcut icon" href="{{request. url_root}}/logo">
+    <style>
+        head,body{
+            border:0;
+            margin:0;
+            background: rgba(0,0,0,0.85);
+        }
+        .row{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            align-content: center;
+            margin: 10px 0;
+        }
+        .no-decor{
+            text-decoration: none;
+            color: initial;
+            font-size: initial;
+            list-style: none;
+        }
+        .btn {
+            border: none;
+            color: black;
+            width: 100px;
+            height: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius:8px;
+            text-shadow: 0 0 1px;
+        }
+        
+        .warn{
+            background-color: rgb(255, 166, 34);
+            box-shadow: 0 0 3px rgb(255, 166, 34);
+        }
+        .warn:hover{
+            box-shadow: 0 0 24px rgb(255, 166, 34);
+        }
+        .danger{
+            background-color: rgb(250, 56, 56);
+            box-shadow: 0 0 3px rgb(250, 56, 56);
+        }
+        .danger:hover{
+            box-shadow: 0 0 24px rgb(250, 56, 56);
+        }
+    </style>
+    {% block head %}{% endblock head %}
+</head>
+<body>
+    {% block body %}{% endblock body %}
+</body>
+</html>

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block head %}
+<style>
+    .detail-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+    }
+
+    .details {
+        position: relative;
+        width: 50vw;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .details>* {
+        width: auto;
+    }
+
+    .details div .image {
+        position: relative;
+        display: block;
+        margin: auto;
+        height: 400px;
+    }
+
+    .details .backgroundblurred {
+        top: 0;
+        position: absolute;
+        width: 100%;
+        filter: blur(12px);
+        z-index: -10;
+        opacity: .75;
+        width: 100%;
+        box-shadow: inset 0 0 20px black, inset 0 0 8px black;
+    }
+
+    .context-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: whitesmoke;
+        text-shadow: 0 0 4px black,0 0 8px black,0 0 12px black,0 0 16px black,0 0 20px black;
+    }
+    .context-box table tr{
+        margin: 12px 0;
+    }
+    .btns-container{
+        padding: 2em;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+</style>
+{% endblock head %}
+{% block body %}
+<div class="detail-container">
+    <div class="detail-box">
+        <div class="details">
+            <div>
+                <img src="{{obj.ImgURL}}" alt="Image Error" class="image">
+            </div>
+            <img src="{{obj.ImgURL}}" alt="" class="backgroundblurred">
+            <div class="context-box">
+                <table>
+                    <tr>
+                        <td>ID</td>
+                        <td>{{obj.id}}</td>
+                    </tr>
+                    <tr>
+                        <td>Image Name</td>
+                        <td>{{obj.ImgName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Image Details</td>
+                        <td>{{obj.ImgDetails}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="btns-container">
+            <a href="/{{obj.id}}/edit" class="btn warn">Edit</a>
+            <a href="/delete/{{obj.id}}" class="btn danger">Delete</a>
+        </div>
+
+    </div>
+</div>
+{% endblock body %}

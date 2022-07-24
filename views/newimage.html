@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block head %}
+<style>
+    .form-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .form-container .form-box .form-field{
+        margin: 2em 0;
+    }
+    .form-container .form-box .form-field input{
+        height: 3em;
+        box-sizing: border-box;
+        text-align: center;
+        width: 50vw;
+        border-radius: 8px;
+        background-color: transparent;
+        outline: none;
+        border:none;
+        color:white;
+    }
+    .form-container .form-box .form-field input:hover{
+        background-color: rgba(255,255,255,0.05);
+    }
+    .form-container .form-box .form-field input:focus{
+        box-shadow: 0 0 8px white;
+    }
+    .form-container .form-box .form-field input::placeholder{
+        color: white;
+    }
+    .form-container .form-box .form-field input[type="submit"]{
+        background-color: rgba(144, 236, 69, 0.75);
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bolder;
+        color:black;
+        text-shadow: 0 0 1px black;
+    }
+    .form-container .form-box .form-field input[type="submit"]:hover{
+        box-shadow: 0 0 4px white;
+    }
+</style>
+{% endblock head %}
+{% block body %}
+<div class="form-container">
+    <div class="form-box">
+        <form action="/" method="post">
+            <div class="form-field">
+                <input type="text" name="imgname" id="imgname" placeholder="Enter the image name" required>
+            </div>
+            <div class="form-field">
+                <input type="url" name="imgurl" id="imgurl" placeholder="Enter the image URL" required>
+            </div>
+            <div class="form-field">
+                <input type="text" name="imgdetails" id="imgdetails" placeholder="Enter the image details" required>
+            </div>
+            <div class="form-field">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock body %}

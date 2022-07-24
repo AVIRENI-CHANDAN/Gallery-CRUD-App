@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block head %}
+<style>
+    .form-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .form-container .form-box .form-field{
+        margin: 2em 0;
+    }
+    .form-container .form-box .form-field input{
+        height: 3em;
+        box-sizing: border-box;
+        text-align: center;
+        width: 50vw;
+        border-radius: 8px;
+        background-color: transparent;
+        outline: none;
+        border:none;
+        color:white;
+    }
+    .form-container .form-box .form-field input:hover{
+        background-color: rgba(255,255,255,0.05);
+    }
+    .form-container .form-box .form-field input:focus{
+        box-shadow: 0 0 8px white;
+    }
+    .form-container .form-box .form-field input::placeholder{
+        color: white;
+    }
+    .form-container .form-box .form-field input[type="submit"]{
+        background-color: rgba(255,255,255,0.75);
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bolder;
+    }
+    .form-container .form-box .form-field input[type="submit"]:hover{
+        box-shadow: 0 0 4px white;
+    }
+</style>
+{% endblock head %}
+{% block body %}
+<div class="form-container">
+    <div class="form-box">
+        <form action="{{ request.path }}" method="POST">
+            <div class="form-field">
+                <input type="text" name="imgname" id="imgname" placeholder="Enter the image name" required value="{{obj.ImgName}}">
+            </div>
+            <div class="form-field">
+                <input type="url" name="imgurl" id="imgurl" placeholder="Enter the image URL" required value="{{obj.ImgURL}}">
+            </div>
+            <div class="form-field">
+                <input type="text" name="imgdetails" id="imgdetails" placeholder="Enter the image details" required value="{{obj.ImgDetails}}">
+            </div>
+            <div class="form-field">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock body %}

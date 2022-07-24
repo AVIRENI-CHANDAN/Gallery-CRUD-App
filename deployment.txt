@@ -1,0 +1,22 @@
+Upon having the code files of the project
+Activate an python environment using
+
+    python -m venv env
+
+activate it using
+
+in linux,
+
+    source env/bin/activate
+
+in windows
+
+    /env/Scripts/activate
+
+install all the necessary packages but executing
+
+    pip install -r requirements.txt
+
+Then execute the app.py file in the base folder
+
+    python app.py
